@@ -1,12 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using unvankurslari.Api.Dto;
-using unvankurslari.Api.Response;
-using unvankurslari.Data;
-using unvankurslari.Data.Services.Abstract;
-using unvankurslari.Entities.Concrete;
 
-namespace unvankurslari.Api.Controllers
+namespace nms
 {
     [Route("api/[controller]")]
     [ApiController]
