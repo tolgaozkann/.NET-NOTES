@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
-        Title = "Ryse Soft unvankurslari Api",
+        Title = "xyz Api",
 
         License = new OpenApiLicense
         {
