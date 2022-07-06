@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArtBloger.Data.Abstract
+namespace nms
 {
     public interface IUnitOfWork :IAsyncDisposable
     {
