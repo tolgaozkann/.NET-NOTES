@@ -62,30 +62,31 @@ public static class CreditCardLunhAlgorithm
         {
             cardNumber = CleanCardNumber(cardNumber);
 
-            if (!CardNoLengthControl(cardNumber)) return false;
-            if (!CardNumberControl(cardNumber)) return false;
-
-            int sumOfEvens = 0;
-            int sumOfOds = 0;
-
-            for(int i = 0; i< cardNumber.Length; i++)
+            if (CardNoLengthControl(cardNumber) && CardNumberControl(cardNumber)) 
             {
-                int element = Convert.ToInt32(cardNumber[i].ToString());
+                 int sumOfEvens = 0;
+                 int sumOfOds = 0;
 
-                if( i% 2 == 0)
-                {
-                    sumOfEvens += GatherDigits(element * 2);
-                }
-                else
-                {
-                    sumOfOds += element;
-                }
+                 for(int i = 0; i < cardNumber.Length; i++)
+                 {
+                     int element = Convert.ToInt32(cardNumber[i].ToString());
+
+                     if(i % 2 == 0)
+                     {
+                         sumOfEvens += GatherDigits(element * 2);
+                     }
+                     else
+                     {
+                         sumOfOds += element;
+                     }
+                 }
+
+                 var result = (sumOfEvens + sumOfOds) % 10;
+
+                 if (result == 0) 
+                      return true;
+                 return false;
             }
-
-            var result = (sumOfEvens + sumOfOds) % 10;
-
-            if (result == 0) return true;
-
             return false;
         }
     }
