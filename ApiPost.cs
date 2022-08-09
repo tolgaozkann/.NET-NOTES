@@ -6,11 +6,11 @@ using (var client = new HttpClient()) //aoutomaticly closes the connection
         Title = "Test Post",
         Body = "Hello World",
         UserId = 44
-    };
-    var newPostJson = JsonSerializer.Serialize(newPost);
-    var payload = new StringContent(newPostJson, Encoding.UTF8, "application/json");
-    var response = client.PostAsync(endpoint, payload).Result;
-    var responseJson = response.Content.ReadAsStringAsync().Result;
+    };//C# model for json object
+    var newPostJson = JsonSerializer.Serialize(newPost);//model to json
+    var payload = new StringContent(newPostJson, Encoding.UTF8, "application/json");//json to http content for posting transactions
+    var response = client.PostAsync(endpoint, payload).Result;//posting and response 
+    var responseJson = response.Content.ReadAsStringAsync().Result;//json to string
     Console.WriteLine(responseJson);
 }
 
